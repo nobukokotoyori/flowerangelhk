@@ -3,267 +3,349 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flower Angel - World Peace in Equity</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <title>Flower Angel HK | International Business Produce & Legal Advisory</title>
+    <!-- Load Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display (for key messages) and Inter (for body) --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome (for icons) --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #fdfdfd; /* Very light background */
+        /* Custom colors and font settings */
+        :root {
+            --color-primary: #182c44; /* Strong Navy: Updated to match flowerangelwhite.jpg background */
+            --color-accent: #d4a5af; /* Dusty Rose/Pink */
+            --color-text: #333333;
         }
-        .flower-bg {
-            /* Brighter, more vibrant flower image */
-            background-image: url('fourseasongeneva.jpg');
+        body {
+            font-family: 'Inter', sans-serif; /* Default body font */
+            color: var(--color-text);
+            background-color: #f7f7f7;
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif; /* Special font for key messages */
+        }
+        .bg-navy { background-color: var(--color-primary); }
+        .text-rose { color: var(--color-accent); }
+        .border-rose { border-color: var(--color-accent); }
+
+        /* Hero section style */
+        .hero-section {
+            background-image: url('flowerback.jpg'); /* 変更: roseparis.jpgからflowerback.jpgへ */
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
-            min-height: 80vh;
-        }
-        .overlay {
-            /* Lighter, softer overlay */
-            background-color: rgba(255, 255, 255, 0.5); 
-        }
-        .section-title {
             position: relative;
-            padding-bottom: 0.5rem;
-            color: #333;
+            z-index: 1;
         }
-        .section-title::after {
+        .hero-overlay {
+            /* ネイビーオーバーレイの透明度を少し下げ、花柄が見えるように調整 */
+            background: rgba(24, 44, 68, 0.7); 
+        }
+        
+        /* Expert profile card style */
+        .profile-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(212, 165, 175, 0.5); /* Rose shadow on hover */
+        }
+
+        /* Link decoration */
+        .link-hover {
+            position: relative;
+            display: inline-block;
+        }
+        .link-hover::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
             left: 50%;
-            transform: translateX(-50%);
-            width: 70px; /* Wider separator */
-            height: 4px;
-            background-color: #F472B6; /* Rose Pink - Soft and floral */
-            border-radius: 9999px;
+            background-color: var(--color-accent);
+            transition: width 0.3s ease, left 0.3s ease;
         }
-        /* Custom font for script-like style if needed, but logo is preferred */
-        .script-font {
-            font-family: 'Dancing Script', cursive; /* Example script font, but depends on loading it */
-            /* This is a fallback/additional style, the logo image is primary */
+        .link-hover:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* Section background with subtle flower image */
+        .section-bg-flower {
+            background-image: url('flowerback.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Makes the background scroll slower than the content */
+            position: relative;
+            z-index: 0;
+        }
+        .section-bg-flower::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* White overlay with subtle transparency to keep text readable but show the pattern */
+            background-color: rgba(255, 255, 255, 0.9); 
+            z-index: -1;
         }
     </style>
-    <!-- Optionally load a script font if you want text-based script alongside the logo or as fallback --><!-- <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet"> --></head>
-<body>
+</head>
+<body class="antialiased">
 
-    <!-- Header / Navigation --><header class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
-            <!-- Logo Area --><div class="flex items-center">
-                <!-- Use the provided Flower Angel logo image --><img src="flowerangellogo.jpg" alt="Flower Angel Logo" class="h-10 md:h-12" onerror="this.onerror=null; this.src='https://placehold.co/180x50/FBCFE8/881337?text=Flower+Angel';">
-            </div>
-            
-            <!-- Navigation Links --><nav class="space-x-6 flex text-lg">
-                <a href="#vision" class="text-gray-700 hover:text-rose-500 transition duration-300 font-medium">Vision</a>
-                <a href="#business" class="text-gray-700 hover:text-rose-500 transition duration-300 font-medium">Business</a>
-                <a href="#impact" class="text-gray-700 hover:text-rose-500 transition duration-300 font-medium">Impact</a>
-                <a href="#leadership" class="text-gray-700 hover:text-rose-500 transition duration-300 font-medium">Leadership</a>
-                <a href="#contact" class="text-gray-700 hover:text-rose-500 transition duration-300 font-medium">Contact</a>
+    <!-- Header / Navigation (Simple fixed header) --><header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-extrabold text-navy tracking-tight">
+                <!-- ヘッダーのロゴ --><img src="flowerangelhk.jpg" alt="Flower Angel HK Logo" class="h-16 md:h-20">
+            </a>
+            <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
+                <a href="#message" class="link-hover">Message</a>
+                <a href="#business" class="link-hover">Our Business</a>
+                <a href="#management" class="link-hover">Management</a>
+                <a href="#contact" class="link-hover">Contact</a>
             </nav>
+            <button class="md:hidden p-2 rounded-lg text-navy hover:bg-gray-100 focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
-    <!-- Hero Section with Flower Image Background --><section class="flower-bg flex items-center justify-center text-center p-10 md:p-20">
-        <div class="overlay w-full h-full absolute inset-0"></div>
-        <div class="relative z-10 p-6 sm:p-12 rounded-2xl max-w-5xl backdrop-blur-sm bg-white/70 shadow-2xl">
-            <!-- Main Title - Text version, can be adjusted for style or also made an image if preferred --><h1 class="text-5xl sm:text-7xl font-extrabold text-gray-900 mb-4 leading-tight tracking-tight">
-                FLOWER ANGEL
+    <!-- 1. Hero Section / Main Visual --><section class="hero-section h-screen flex items-center justify-center">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="max-w-4xl mx-auto text-center z-10 p-6">
+            <h1 class="text-6xl md:text-8xl font-playfair font-black text-white leading-tight mb-6">
+                <span class="text-rose">World Peace in Equity.</span>
             </h1>
-            <h2 class="text-xl sm:text-4xl text-rose-700 font-light italic mt-2">
-                Nurturing Potential. Connecting Worlds.
-            </h2>
-            <p class="mt-6 text-lg sm:text-2xl text-gray-800 font-medium leading-relaxed">
-                We are the producers of **World Peace in Equity**—a global flow connecting Japan and the world, dedicated to helping every individual and enterprise flourish like a bright, unique flower.
+            <p class="text-2xl md:text-3xl font-playfair text-white font-light opacity-90 leading-relaxed italic">
+                We help people flourish to realize a prosperous world where each flower shines brightly.
             </p>
-            <a href="#business" class="mt-10 inline-block px-10 py-4 bg-rose-500 text-white text-xl font-semibold rounded-full shadow-xl hover:bg-rose-600 transition duration-300 transform hover:scale-105 shadow-rose-300/80">
-                Explore Our Purpose
+            
+            <a href="#business" class="mt-10 inline-block bg-white text-navy font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition duration-300">
+                View Our Business <i class="fas fa-arrow-right ml-2"></i>
             </a>
         </div>
     </section>
+    
+    <!-- New Section: Key Role Statement (Close to Header) -->
+    <section class="py-12 bg-white shadow-inner">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-3xl font-black text-navy mb-2">
+                FLOWER ANGEL HK: <span class="text-rose">YOUR LEGAL & ADVISORY ANGEL</span>
+            </h3>
+            <p class="text-lg font-medium text-gray-700">
+                Legal Expertise Securing Every Angel’s Global Mission.
+            </p>
+        </div>
+    </section>
 
-    <!-- Vision & Mission Section --><section id="vision" class="py-20 md:py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 class="section-title text-4xl font-bold mb-16">OUR CORE PHILOSOPHY</h3>
+    <!-- 2. Message / Philosophy (With flowerback.jpg background) --><section id="message" class="py-20 section-bg-flower">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 class="text-4xl font-extrabold text-center mb-4 text-navy">
+                Our Message & Philosophy
+            </h2>
+            <p class="text-center text-xl font-light text-rose mb-12">
+                "Each flower shines brightly."
+            </p>
 
-            <div class="grid md:grid-cols-2 gap-16 text-left">
-                <!-- Vision Card --><div class="bg-rose-50 p-10 rounded-2xl shadow-xl border border-rose-200 transform hover:shadow-2xl transition duration-500">
-                    <p class="text-sm font-semibold text-rose-600 uppercase mb-3 tracking-wider">Vision</p>
-                    <h4 class="text-5xl font-extrabold text-gray-800 mb-4">World Peace in Equity.</h4>
-                    <p class="text-gray-700 text-xl leading-relaxed">
-                        We envision a world where every entity operates on a foundation of fairness and balance, leading to sustainable global peace and prosperity—a garden where all flowers thrive equally.
+            <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg border-t-4 border-rose">
+                <blockquote class="text-lg md:text-xl leading-relaxed italic text-gray-700">
+                    <p class="mb-4">
+                        World peace in equity.
+                    </p>
+                    <p class="mb-4">
+                        We help people flourish to realize a prosperous world where each individual shines brightly.
+                    </p>
+                    <p class="mt-6">
+                        We believe that each person is born with something that only he or she can have, and we refer to it as a “flower” and provide services to angels around the world who can make “flowers” flourish.
+                    </p>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Our Business / Business Details (With flowerback.jpg background) --><section id="business" class="py-20 section-bg-flower">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 class="text-4xl font-extrabold text-center mb-16 text-navy">
+                Our Business: Global Empowerment
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Business 1: International Business Produce -->
+                <div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-navy hover:shadow-2xl transition duration-300">
+                    <div class="text-4xl text-rose mb-4"><i class="fas fa-globe-asia"></i></div>
+                    <h3 class="text-2xl font-semibold mb-3 text-navy">International Business Produce</h3>
+                    <p class="text-gray-600">
+                        <!-- 修正されたプロデューサー業を強調する表現 -->
+                        As international business producers, we provide comprehensive oversight, leading the entire process of global expansion—from strategic design to hands-on execution. We are the driving force behind the creation and sustained growth of global ventures.
                     </p>
                 </div>
                 
-                <!-- Mission Card --><div class="bg-rose-50 p-10 rounded-2xl shadow-xl border border-rose-200 transform hover:shadow-2xl transition duration-500">
-                    <p class="text-sm font-semibold text-rose-600 uppercase mb-3 tracking-wider">Mission</p>
-                    <h4 class="text-3xl font-bold text-gray-800 mb-4">Helping Every Flower Flourish.</h4>
-                    <p class="text-gray-700 text-xl leading-relaxed">
-                        We believe every person is born with a unique inherent quality—a **“flower.”** We provide dedicated services to **“angels”** globally—the leaders and enterprises who tenderly nurture this potential—to realize a prosperous world where each individual shines brightly.
+                <!-- Business 2: Investment & Expansion Consulting -->
+                <div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-navy hover:shadow-2xl transition duration-300">
+                    <div class="text-4xl text-rose mb-4"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="text-2xl font-semibold mb-3 text-navy">Investment & Expansion Consulting</h3>
+                    <p class="text-gray-600">
+                        <!-- 修正: 2019年からの実績と支援範囲を追加 -->
+                        Since 2019, we have successfully assisted numerous Japanese companies with their overseas expansion. Leveraging our profound experience in the Japanese market and extensive global network, we provide expert advisory on international investment strategy formulation, M&A, and consulting for new entry into international markets, enabling growth in Japan and other countries.
+                    </p>
+                </div>
+                
+                <!-- Business 3: Legal, Tax, and Investment Structuring Advisory (Icon used) -->
+                <div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-rose hover:shadow-2xl transition duration-300">
+                    <div class="text-4xl text-navy mb-4">
+                        <i class="fas fa-scale-balanced"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-rose">Legal, Tax, and Investment Structuring Advisory</h3>
+                    <p class="text-gray-600 font-medium">
+                        We provide <span class="font-bold">all legal and regulatory services</span> associated with International Business Produce, offering professional support in navigating the complexities of international transactions, investment structuring, and expansion for our "Angels."
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Business Evolution Section --><section class="py-20 md:py-32 bg-gray-50">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 class="section-title text-4xl font-bold mb-16">OUR EVOLUTION: BRIDGING NATIONS</h3>
-            <div class="max-w-3xl mx-auto space-y-12">
-                <!-- Former Business --><div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-gray-400">
-                    <p class="text-xl font-bold text-gray-700 mb-2">Our Foundation: Global Expansion of Japan</p>
-                    <p class="text-gray-600 text-lg">
-                        Our journey began with a focus on **supporting Japanese companies in their global expansion**, establishing a robust core in international business production, legal, and investment advisory.
-                    </p>
+    <!-- 4. Management / Leadership Team (With flowerback.jpg background) --><section id="management" class="py-20 section-bg-flower">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 class="text-4xl font-extrabold text-center mb-16 text-navy">
+                Leadership Team: Guiding Your Success
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                
+                <!-- Profile: Joseph Chow --><div class="profile-card bg-white p-8 rounded-xl shadow-lg border-l-4 border-navy">
+                    <div class="flex items-start space-x-6">
+                        <!-- Joseph Chow Image --><img src="joseph.jpg" onerror="this.onerror=null;this.src='https://placehold.co/120x120/1e3a8a/ffffff?text=J.C'" alt="Joseph Chow Profile" class="rounded-full object-cover w-24 h-24 border-4 border-rose">
+                        <div>
+                            <p class="text-sm font-semibold text-rose uppercase">CEO & Legal Professional</p>
+                            <h3 class="text-3xl font-extrabold text-navy mb-2">Joseph Chow</h3>
+                            
+                            <p class="text-gray-700 leading-relaxed text-lg">
+                                He was admitted as a lawyer in Hong Kong in 1999 and is a legal professional with many years of experience handling international transactions, investments and intellectual property for various companies around the world.
+                            </p>
+                            
+                            <!-- Joseph Chow: Wellington Legalとの連携を追記 --><div class="mt-2 text-gray-700 leading-relaxed text-lg">
+                                Through <a href="https://wellingtonlegal.com.hk/" target="_blank" class="text-rose underline hover:no-underline font-semibold">Wellington Legal</a>, he provides comprehensive legal services leveraging a vast global network. Wellington Legal has acted for clients from more than 25 countries across expertise areas including Corporate & Commercial, Intellectual Property, and Dispute Resolution.
+                            </div>
+
+                            <!-- Wellington Legal Backing Callout --><div class="mt-4 p-4 bg-navy text-white rounded-lg shadow-md">
+                                <p class="font-bold mb-1 flex items-center">
+                                    <i class="fas fa-shield-alt mr-2 text-rose"></i> Strong Legal Backing
+                                </p>
+                                <p class="text-sm">
+                                    He is also the Managing Partner of Wellington Legal, ensuring that Flower Angel HK is strongly backed by extensive, top-tier legal and investment expertise.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex justify-center">
-                    <svg class="w-10 h-10 text-rose-500 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+
+                <!-- Profile: Nobuko Kotoyori --><div class="profile-card bg-white p-8 rounded-xl shadow-lg border-l-4 border-navy">
+                    <div class="flex items-start space-x-6">
+                        <!-- Nobuko Kotoyori Image --><img src="nobukohk.jpg" onerror="this.onerror=null;this.src='https://placehold.co/120x120/d4a5af/1e3a8a?text=N.K'" alt="Nobuko Kotoyori Profile" class="rounded-full object-cover w-24 h-24 border-4 border-navy">
+                        <div>
+                            <p class="text-sm font-semibold text-rose uppercase">Representative of Japan</p>
+                            <h3 class="text-3xl font-extrabold text-navy mb-2">Nobuko Kotoyori</h3>
+                            
+                            <p class="text-gray-700 leading-relaxed text-lg">
+                                After her education at Brigham Young University-Hawaii, she has built a rich network of family-like relationships around the world, connecting global opportunities with a human touch. She is a producer highly active in the entertainment, music, and film industries, and is dedicated to creating a "Humanitarian Economy" that leverages Japanese values to foster cultural exchange and sustainable growth.
+                            </p>
+                            
+                            <!-- Nobuko Kotoyori: Humanitarian Economy Movement セクションへ変更 --><div class="mt-4 pt-4 border-t border-gray-200">
+                                <h4 class="text-lg font-bold text-navy mb-2">Humanitarian Economy Movement</h4>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li>
+                                        <i class="fas fa-hands-holding-child mr-2 text-rose"></i> 
+                                        Benefit Circulation: <a href="https://uzuworld.com/" target="_blank" class="text-rose underline hover:no-underline">UZU World</a>
+                                        (Creating a sustainable cycle of support and profit)
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-film mr-2 text-rose"></i> 
+                                        Film, Documentary, & Music Projects: <a href="http://echoes-of-light.jp/" target="_blank" class="text-rose underline hover:no-underline">Echoes of Light</a>
+                                        (Promoting the Humanitarian Economy through art)
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="inline-flex items-center text-sm font-medium text-rose bg-rose/10 px-3 py-1 rounded-full">
+                                    <i class="fas fa-music mr-2"></i> Music & Entertainment
+                                </span>
+                                <span class="inline-flex items-center text-sm font-medium text-rose bg-rose/10 px-3 py-1 rounded-full">
+                                    <i class="fas fa-heart mr-2"></i> Humanitarian Economy
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Current Business --><div class="bg-white p-10 rounded-xl shadow-2xl border-l-4 border-rose-500">
-                    <p class="text-2xl font-extrabold text-rose-600 mb-4">Our Present Mission: Global Producer</p>
-                    <p class="text-gray-800 text-xl leading-relaxed">
-                        We have evolved into a full-scale **International Business Produce** firm. Our mission now is to **connect the world and Japan**, utilizing our expansive cross-border network to strategically produce and realize our core vision: **World Peace in Equity.**
-                    </p>
-                </div>
+
             </div>
         </div>
     </section>
-
-    <!-- Core Business Section --><section id="business" class="py-20 md:py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="section-title text-4xl font-bold text-center mb-16">OUR CORE BUSINESS: INTERNATIONAL BUSINESS PRODUCE</h3>
-            
-            <div class="flex flex-col lg:flex-row gap-12 items-start">
-                <!-- Credibility Block --><div class="lg:w-1/3 bg-rose-50 p-8 rounded-2xl shadow-xl self-stretch flex flex-col justify-center border border-rose-200">
-                    <h4 class="text-2xl font-bold text-rose-600 mb-4">TRUST & FOUNDATION</h4>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        Our ability to deliver complex international expansion, legal, tax, and investment advisory services is built upon the **extensive global network** and **profound legal experience** of our leadership. We execute our services with the highest level of integrity and strategic foresight.
+    
+    <!-- 5. Footer / Contact Information (Plain navy background) --><footer id="contact" class="bg-navy text-white py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 border-b border-rose/30 pb-10 mb-10">
+                
+                <!-- Logo and Motto --><div class="flex flex-col items-start">
+                    <!-- フッターのロゴ --><img src="flowerangelwhite.jpg" alt="Flower Angel HK Logo" class="h-20 md:h-24 mb-4">
+                    <!-- 修正: フッターのモットーの改行を一つ削除 -->
+                    <p class="text-gray-300 text-sm font-bold">
+                        World Peace in Equity.<br>Your Vision, Our Shield.
                     </p>
-                    <a href="https://wellingtonlegal.com.hk/" target="_blank" class="mt-6 text-base font-semibold text-rose-500 hover:text-rose-700 inline-flex items-center">
-                        Associated Legal Network (e.g., Wellington Legal) &rarr;
+                    <a href="#message" class="mt-4 inline-block text-rose hover:text-white transition duration-200">
+                        View Full Message <i class="fas fa-chevron-right ml-1 text-sm"></i>
                     </a>
                 </div>
 
-                <!-- Services List --><div class="lg:w-2/3 space-y-8">
-                    <div class="p-6 bg-white rounded-xl shadow-lg border-l-4 border-rose-500 transform hover:shadow-xl transition duration-300">
-                        <h5 class="font-extrabold text-2xl text-gray-800 mb-1">International Business Development & Produce</h5>
-                        <p class="text-gray-600 text-lg">Tailored strategies and direct production support for global market entry and cross-border success.</p>
-                    </div>
-                    <div class="p-6 bg-white rounded-xl shadow-lg border-l-4 border-rose-500 transform hover:shadow-xl transition duration-300">
-                        <h5 class="font-extrabold text-2xl text-gray-800 mb-1">Global Advisory Services</h5>
-                        <p class="text-gray-600 text-lg">Comprehensive support across international investment, expansion consulting, legal, tax, and specialized investment advisory.</p>
-                    </div>
-                    <div class="p-6 bg-white rounded-xl shadow-lg border-l-4 border-rose-500 transform hover:shadow-xl transition duration-300">
-                        <h5 class="font-extrabold text-2xl text-gray-800 mb-1">Japanese Angels Support</h5>
-                        <p class="text-gray-600 text-lg">Dedicated support, projects, and partnerships focused on unlocking the potential of the Japanese market globally.</p>
-                    </div>
+                <!-- Quick Links --><div class="pl-4 md:pl-0">
+                    <h5 class="text-lg font-semibold mb-4 text-rose">Quick Links</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#message" class="text-gray-300 hover:text-white transition duration-200">Message</a></li>
+                        <li><a href="#business" class="text-gray-300 hover:text-white transition duration-200">Our Business</a></li>
+                        <li><a href="#management" class="text-gray-300 hover:text-white transition duration-200">Management</a></li>
+                        <li><a href="https://wellingtonlegal.com.hk/" target="_blank" class="text-gray-300 hover:text-white transition duration-200">Wellington Legal (Partner)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info --><div class="md:col-span-2 pl-4 md:pl-0">
+                    <h5 class="text-lg font-semibold mb-4 text-rose">Contact Information</h5>
+                    <ul class="space-y-3 text-gray-300">
+                        <li>
+                            <i class="fas fa-map-marker-alt mr-3 text-rose"></i>
+                            <!-- Address with Google Maps link --><a href="https://maps.google.com/?q=FLAT/RM%2001%2603,%2016/F,%20Fairmont%20House,%208%20Cotton%20Tree%20Drive,%20Central,%20Hong%20Kong" target="_blank" class="hover:text-white transition duration-200">
+                                FLAT/RM 01&03, 16/F, Fairmont House, 8 Cotton Tree Drive, Central, Hong Kong
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope mr-3 text-rose"></i>
+                            <a href="mailto:info@flowerangelhk.com" class="hover:text-white transition duration-200">info@flowerangelhk.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-globe mr-3 text-rose"></i>
+                            <a href="https://flowerangelhk.com" target="_blank" class="hover:text-white transition duration-200">flowerangelhk.com</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Impact Section --><section id="impact" class="py-20 md:py-32 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="section-title text-4xl font-bold text-center mb-16">OUR IMPACT & TRACK RECORD</h3>
-
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Echoes of Light Block --><div class="bg-white p-10 rounded-2xl shadow-xl border border-gray-200">
-                    <h4 class="text-3xl font-bold text-gray-800 mb-4">Echoes of Light</h4>
-                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
-                        We measure our success by the positive impact we create in the global economy and humanitarian sphere. Our achievements and future initiatives—the light reflecting our purpose—are chronicled as **Echoes of Light.**
-                    </p>
-                    <a href="https://flowerangelhk.com/" target="_blank" class="font-semibold text-rose-500 hover:text-rose-700 inline-flex items-center text-lg">
-                        View Our Full Track Record &rarr;
-                    </a>
-                </div>
-
-                <!-- Featured Case Study --><div class="bg-rose-50 p-10 rounded-2xl shadow-xl border-l-4 border-rose-500">
-                    <h4 class="text-3xl font-bold text-rose-600 mb-4">Featured Case Study: Humanitarian Economy</h4>
-                    <p class="text-gray-800 text-lg leading-relaxed mb-4">
-                        Flower Angel served as the lead producer for **UZUSHIO Holdings** (<a href="https://uzushio-holdings.com/" target="_blank" class="text-blue-500 hover:underline">uzushio-holdings.com</a>). This involvement was instrumental in the company’s expansion, including the establishment and growth of the Philippine corporation, **UZU PH** (<a href="https://uzuworld.com/index.html" target="_blank" class="text-blue-500 hover:underline">uzuworld.com</a>). This project exemplifies our commitment to actively promoting the **Humanitarian Economy.**
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Leadership Section --><section id="leadership" class="py-20 md:py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="section-title text-4xl font-bold text-center mb-16">LEADERSHIP</h3>
-            
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Joseph Shiu Card --><div class="flex flex-col md:flex-row items-center bg-rose-50 p-8 rounded-2xl shadow-xl border border-rose-200">
-                    <div class="mb-4 md:mb-0 md:mr-8 flex-shrink-0">
-                        <!-- Use Joseph's uploaded image with a fallback --><img src="joseph.jpg" alt="Joseph Shiu" class="w-36 h-36 object-cover rounded-full shadow-lg border-4 border-white" onerror="this.onerror=null; this.src='https://placehold.co/144x144/FBCFE8/881337?text=CEO';">
-                    </div>
-                    <div>
-                        <h4 class="text-2xl font-bold text-gray-800">Joseph Shiu</h4>
-                        <p class="text-rose-600 font-semibold text-xl mb-2">Owner & President (CEO)</p>
-                        <p class="text-gray-700 text-base leading-relaxed">
-                            Admitted as a lawyer in Hong Kong in 1999, Mr. Shiu is a highly seasoned legal professional whose expertise and vast global network are the foundation of our firm's capabilities in international transactions, investments, and IP matters for global corporations.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Nobuko Kotoyori Card --><div class="flex flex-col md:flex-row items-center bg-rose-50 p-8 rounded-2xl shadow-xl border border-rose-200">
-                    <div class="mb-4 md:mb-0 md:mr-8 flex-shrink-0">
-                        <img src="https://placehold.co/144x144/FBCFE8/881337?text=Rep" alt="Nobuko Kotoyori" class="w-36 h-36 object-cover rounded-full shadow-lg border-4 border-white">
-                    </div>
-                    <div>
-                        <h4 class="text-2xl font-bold text-gray-800">Nobuko Kotoyori</h4>
-                        <p class="text-rose-600 font-semibold text-xl mb-2">Japan Representative</p>
-                        <p class="text-gray-700 text-base leading-relaxed">
-                            Driving the strategic connection between Japan and the global markets, ensuring our clients receive localized expertise with a compassionate, global perspective—the essential bridge for our purpose.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Footer --><footer id="contact" class="bg-gray-800 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-3xl font-bold text-center mb-10">CONTACT US</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-                
-                <!-- Contact Info --><div class="space-y-4">
-                    <h4 class="text-2xl font-semibold text-rose-300">Get in Touch</h4>
-                    <p class="text-gray-400 text-lg">
-                        For all inquiries regarding our International Business Produce services, please contact us directly.
-                    </p>
-                    <p class="text-xl font-medium">Email: <a href="mailto:info@flowerangelhk.com" class="text-rose-400 hover:text-rose-200 transition duration-300">info@flowerangelhk.com</a></p>
-                </div>
-                
-                <!-- Company Info Table --><div class="lg:col-span-2">
-                    <h4 class="text-2xl font-semibold text-rose-300 mb-4">Company Details</h4>
-                    <table class="min-w-full text-left text-gray-400 text-lg">
-                        <tbody>
-                            <tr>
-                                <td class="py-2 pr-4 font-medium">Company Name</td>
-                                <td class="py-2">Flower Angel Company Limited</td>
-                            </tr>
-                            <tr>
-                                <td class="py-2 pr-4 font-medium">Entity Type</td>
-                                <td class="py-2">Hong Kong Corporation</td>
-                            </tr>
-                            <tr>
-                                <td class="py-2 pr-4 font-medium">Established</td>
-                                <td class="py-2">April 2019</td>
-                            </tr>
-                            <tr>
-                                <td class="py-2 pr-4 font-medium">Address</td>
-                                <td class="py-2">FLAT/RM 01&03, 16/F, Fairmont House, 8 Cotton Tree Drive, Central, Hong Kong</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
-            <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">
-                &copy; 2025 Flower Angel Company Limited. All Rights Reserved. Nurturing the world's finest flowers.
+            <!-- Copyright --><div class="text-center text-sm text-gray-400 pt-8">
+                &copy; 2024 Flower Angel HK. All Rights Reserved.
             </div>
         </div>
     </footer>
 
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
