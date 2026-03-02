@@ -36,21 +36,50 @@
         /* 桜のアニメーション設定 */
         .petal {
             position: fixed;
-            background-color: #ffb7c5;
-            border-radius: 150% 0 150% 0;
+            top: -50px;
             pointer-events: none;
             z-index: 1;
+            /* 基本の落下アニメーション */
             animation: fall linear forwards;
         }
 
+        /* 花びらの形（疑似要素で作成） */
+        .petal::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: #ffb7c5;
+            border-radius: 100% 0 100% 0;
+            /* 左右に揺れるアニメーション */
+            animation: sway ease-in-out infinite;
+        }
+
+        /* 落下アニメーション */
         @keyframes fall {
             0% {
-                transform: translateY(-10vh) translateX(0) rotate(0deg);
-                opacity: 0.8;
+                transform: translateY(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
             }
             100% {
-                transform: translateY(110vh) translateX(100px) rotate(720deg);
+                transform: translateY(110vh);
                 opacity: 0;
+            }
+        }
+
+        /* 左右への揺れと回転 */
+        @keyframes sway {
+            0%, 100% {
+                transform: translateX(0) rotate(0deg);
+            }
+            50% {
+                transform: translateX(50px) rotate(180deg);
             }
         }
 
@@ -215,23 +244,60 @@
     </div>
 
     <script>
+        // 桜の花びらの色（バリエーション）
+        const colors = ['#ffb7c5', '#ffc0cb', '#ffe4e1', '#fff0f5', '#ffd1dc'];
+
         function createPetal() {
             const petal = document.createElement('div');
             petal.className = 'petal';
+            
+            // ランダムなサイズ (10px - 20px)
             const size = Math.random() * 10 + 10;
             petal.style.width = size + 'px';
             petal.style.height = size + 'px';
+            
+            // ランダムな開始位置（画面の横幅全体）
             petal.style.left = Math.random() * 100 + 'vw';
-            const duration = Math.random() * 5 + 5;
-            petal.style.animationDuration = duration + 's';
-            petal.style.animationDelay = Math.random() * 5 + 's';
+            
+            // アニメーション設定
+            const fallDuration = Math.random() * 6 + 7; // 落下時間 7s - 13s
+            const swayDuration = Math.random() * 2 + 2; // 揺れ時間 2s - 4s
+            const delay = Math.random() * 5;           // 遅延 0s - 5s
+            
+            petal.style.animationDuration = `${fallDuration}s`;
+            petal.style.animationDelay = `${delay}s`;
+
+            // 花びら本体（揺れ）の設定
+            const leaf = document.createElement('div');
+            leaf.className = 'petal-inner'; // スタイルはCSSの .petal::after を継承するように調整
+            
+            // 個別に色をランダム設定
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            // カスタムスタイルの適用（疑似要素の代わりにより柔軟に制御）
+            petal.innerHTML = `
+                <div style="
+                    width: 100%;
+                    height: 100%;
+                    background-color: ${color};
+                    border-radius: 100% 0 100% 0;
+                    animation: sway ${swayDuration}s ease-in-out infinite;
+                "></div>
+            `;
+
             document.body.appendChild(petal);
+
+            // アニメーション終了後に要素を削除してメモリを節約
             setTimeout(() => {
                 petal.remove();
-            }, (duration + 5) * 1000);
+            }, (fallDuration + delay) * 1000);
         }
-        setInterval(createPetal, 300);
-        for(let i=0; i<20; i++) {
+
+        // 定期的に生成
+        setInterval(createPetal, 400);
+
+        // 初回ロード時にもいくつか生成
+        for(let i=0; i<15; i++) {
             createPetal();
         }
     </script>
